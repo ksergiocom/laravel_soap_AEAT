@@ -1,0 +1,22 @@
+Guía rápida: Cómo convertir un certificado .pfx a .pem
+Abre una terminal (Linux/macOS) o una consola con OpenSSL instalado (Windows con Git Bash o similar).
+
+Ejecuta el siguiente comando para extraer la clave privada y el certificado del .pfx:
+
+----------------------------------------------------------------
+openssl pkcs12 -in certificado.pfx -out certificado.pem -nodes
+----------------------------------------------------------------
+
+
+-in certificado.pfx: ruta al archivo original .pfx.
+
+-out certificado.pem: nombre del archivo .pem que se generará.
+
+-nodes: indica que la clave privada no estará cifrada (necesario para que PHP la pueda usar).
+
+Cuando se solicite, introduce la contraseña del archivo .pfx si tiene.
+
+Mueve o copia el archivo certificado.pem resultante dentro de la carpeta /cert de tu proyecto.
+
+Configura tu aplicación Laravel para que use ese archivo .pem para las peticiones SOAP.
+
