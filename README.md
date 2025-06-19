@@ -12,6 +12,7 @@ El objetivo principal es ofrecer un servicio que facilite la comunicación con l
 - Dar de alta nuevas facturas.
 - Subsanar errores en facturas.
 - Eliminar facturas cuando sea necesario.
+- Genera HASH según especificaciones de VeriFactu
 
 Todo ello utilizando el protocolo SOAP y los esquemas oficiales proporcionados por la Agencia Tributaria.
 
@@ -19,7 +20,7 @@ Todo ello utilizando el protocolo SOAP y los esquemas oficiales proporcionados p
 
 - **Laravel** como framework backend.
 - Cliente SOAP en PHP para consumir los servicios de VeriFactu.
-  - El core de la lógica esta ubicada en **app/Services/SoapService.php**
+  - El core de la lógica esta ubicada en **app/Services/VeriFactu**
 - Importación y uso de archivos **WSDL** y **XSD** oficiales para definir los servicios y tipos de datos.
 - Uso de certificados digitales almacenados en carpetas específicas:
   - `/cert` para los certificados necesarios (en formato `.pem`).
@@ -60,6 +61,7 @@ Para ver las opciones seguimos los pasos:
 1. [Portal de pruebas](https://preportal.aeat.es/)
 2. [Validaciones respuestas SOAP](https://www.agenciatributaria.es/static_files/AEAT_Desarrolladores/EEDD/IVA/VERI-FACTU/Validaciones_Errores_Veri-Factu.pdf)
 3. [Codigos errores respuesta](https://prewww2.aeat.es/static_files/common/internet/dep/aplicaciones/es/aeat/tikeV1.0/cont/ws/errores.properties)
-4. [Ejemplos](utaria.gob.es/static_files/AEAT_Desarrolladores/EEDD/IVA/VERI-FACTU/Veri-Factu_Descripcion_SWeb.pdf)
+4. [Ejemplos](https://sede.agenciatributaria.gob.es/static_files/AEAT_Desarrolladores/EEDD/IVA/VERI-FACTU/Veri-Factu_Descripcion_SWeb.pdf)
 5. [Información tecnica y descarga esquemas](https://sede.agenciatributaria.gob.es/Sede/iva/sistemas-informaticos-facturacion-verifactu/informacion-tecnica.html)
 6. [Consulta portal web](https://sede.agenciatributaria.gob.es/static_files/common/html/selector_acceso/SelectorAccesos.html?rep=S&ref=%2Fwlpl%2FTIKE-CONT%2FSvTikeEmitidasQuery&aut=CP)
+7. [Especificaciones HASH](https://www.agenciatributaria.es/static_files/AEAT_Desarrolladores/EEDD/IVA/VERI-FACTU/Veri-Factu_especificaciones_huella_hash_registros.pdf)

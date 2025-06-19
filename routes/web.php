@@ -8,12 +8,17 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/soap-info', function(){
+Route::get('/soap/info', function(){
     $ss = new SoapService();
     return $ss->info();
 });
 
-Route::get('/soap-test', function(){
+Route::get('/soap/consulta', function(){
     $ss = new SoapService();
     return $ss->consultarFacturas();
+});
+
+Route::get('/soap/alta-primero', function(){
+    $ss = new SoapService();
+    return $ss->altaFactura();
 });
